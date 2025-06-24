@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Evaluator</title>
+</head>
+<body>
+    <script>
+    let marks = prompt("Enter your marks");
+    marks = Number(marks);
+    if (isNaN(marks) || marks < 0 || marks > 100) {
+        console.log("Invalid input! Please enter marks between 0 and 100.");
+    } else {
+        let grade = "";
+        let message = "";
+        switch (Math.floor(marks / 10)) {
+            case 10:
+            case 9:
+                grade = "A";
+                message = "Excellent!";
+                break;
+            case 8:
+            case 7:
+                grade = "B";
+                message = "Great job!";
+                break;
+            case 6:
+                grade = "C";
+                message = "Good effort.";
+                break;
+            case 5:
+            case 4:
+                grade = "D";
+                message = "You passed.";
+                break;
+            default:
+                grade = "F";
+                message = "Better luck next time.";
+                break;
+            }
+            alert(`Your grade is: ${grade}\n${message}`);
+  
+            console.log(`Marks: ${marks}, Grade: ${grade} - ${message}`);
+        }
+    </script>
+</body>
+</html>
